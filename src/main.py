@@ -1,26 +1,12 @@
+#? Importing libraries import flet as ft
 import flet as ft
 
 
+#! The main function def main(page: ft.Page):
 def main(page: ft.Page):
-    counter = ft.Text("0", size=50, data=0)
+    page.title = "30 Days of Flet!"
 
-    def increment_click(e):
-        counter.data += 1
-        counter.value = str(counter.data)
-        counter.update()
+# Run the UI
+if __name__ == "__main__":
+    ft.app(main)
 
-    page.floating_action_button = ft.FloatingActionButton(
-        icon=ft.Icons.ADD, on_click=increment_click
-    )
-    page.add(
-        ft.SafeArea(
-            ft.Container(
-                counter,
-                alignment=ft.alignment.center,
-            ),
-            expand=True,
-        )
-    )
-
-
-ft.app(main)
